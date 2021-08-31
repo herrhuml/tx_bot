@@ -1,1 +1,1 @@
-# ourbot
+# currently a TX Bot
