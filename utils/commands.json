@@ -1,0 +1,92 @@
+{
+	"worker": {
+		"stats": {
+			"cmd": "stats",
+			"desc_short": "display stats",
+			"desc_long": "displays stats of the person specified or yours",
+			"usage": "``+stats (tag worker)``",
+			"example": "``+stats``\r\n``+stats @herrhuml``"
+		},
+		"update": {
+			"cmd": "update",
+			"desc_short": "update the amount done",
+			"desc_long": "updates the ammount you've done on the specified order",
+			"usage": "``+update (order ID) {amount}``\r\nthe (order ID) is only needed if you are updating a new order",
+			"example": "``+update TXC-555 2500``\r\n``+update 3000``"
+		},
+		"connect": {
+			"cmd": "connect",
+			"desc_short": "connect to a server",
+			"desc_long": "returns a link and F8 command to connect to the specified server",
+			"usage": "``+connect {server}``",
+			"example": "``+connect 6``"
+		}
+	},
+	"collector": {
+		"add": {
+			"cmd": "add",
+			"desc_short": "add orders to the worker",
+			"desc_long": "adds the specified order(s) to the worker/yourself",
+			"usage": "``+add (tag worker/discord ID) {order(s)}``\r\nnot supplying a tag/id will add the order(s) to you",
+			"example": "``+add @herrhuml TXC-555 TXE-546``\r\n``+add 012345678912345678 TXC-555 TXE-546``\r\n``+add TXC-555 TXE-546``"
+		},
+		"ready": {
+			"cmd": "ready",
+			"desc_short": "send the ready message",
+			"desc_long": "sends the ready message with the specified orders\r\nCurrently not 100% finished",
+			"usage": "``+ready {tag customer} {order(s)}``",
+			"example": "``+ready @herrhuml TXE-222 TXC-1420 TXC-1337``"
+		},
+		"complete": {
+			"cmd": "complete",
+			"desc_short": "edit the ready message",
+			"desc_long": "edits the ready message containing the orders with <:received:550698922637524992>\r\nCurrently not 100% finished",
+			"usage": "``+complete {order(s)}``",
+			"example": "``+complete TXC-1337 TXE-222``"
+		}
+	},
+	"manager": {
+		"perms": {
+			"cmd": "perms",
+			"desc_short": "set permissions on the spreadsheet",
+			"desc_long": "sets the permissions on the spreadsheet for the specified worker",
+			"usage": "``+perms {add/remove} (both/tokens/cargo) {tag worker/discord ID}``\r\nvalues in () are only to be used with perms add",
+			"example": "``+perms add tokens @herrhuml``\r\n``+perms add cargo 012345678912345678``\r\n``+perms remove @herrhuml``\r\n``+perms remove 012345678912345678``"
+		},
+		"updateroles": {
+			"cmd": "updateroles",
+			"desc_short": "update discord roles list for worker on the sheet",
+			"desc_long": "updates the discord roles list for the specified worker",
+			"usage": "``+updateroles {tag worker/discord ID}``",
+			"example": "``+updateroles @herrhuml``\r\n``+updateroles 012345678912345678``"
+		},
+		"inactive": {
+			"cmd": "inactive",
+			"desc_short": "set worker inactive",
+			"desc_long": "sets the specified worker inactive\r\nremoves dc roles, sheet perms, moves worker to Inactive Staff",
+			"usage": "``+inactive {tag worker/discord ID}``",
+			"example": "``+inactive @herrhuml``\r\n``+inactive 012345678912345678``"
+		},
+		"active": {
+			"cmd": "active",
+			"desc_short": "set worker active",
+			"desc_long": "sets the specified worker active\r\nadds dc roles, sheet perms, moves worker to Staff List",
+			"usage": "``+active {tag worker/discord ID}``",
+			"example": "``+active @herrhuml``\r\n``+active 012345678912345678``"
+		},
+		"rename": {
+			"cmd": "rename",
+			"desc_short": "rename a worker",
+			"desc_long": "changes the name of a given worker on every sheet",
+			"usage": "``+rename {\"name\"/tag worker/discord ID} {\"new name\"}``\r\nNames have to be in ``\"\"``",
+			"example": "``+rename @herrhuml \"herrhuml\"``\r\n``+rename \"HerrHuml\" \"herrhuml\"``\r\n``+rename 012345678912345678 \"herrhuml\"``"
+		},
+		"hire": {
+			"cmd": "hire",
+			"desc_short": "hire a worker",
+			"desc_long": "Adds member to staff list. Adds discord roles. Adds sheet permissions. Updates role list. Sends welcome messages.",
+			"usage": "``+hire {messageID}``\r\nmessage ID is from the app channel ``\"\"``",
+			"example": "``+hire 731234288032284682``"
+		}
+	}
+}
